@@ -1,0 +1,10 @@
+<h2>لیست نمایندگان</h2>
+<form method="post" action="/add-reseller/">
+    <input name="username" placeholder="نام نماینده">
+    <button type="submit">افزودن</button>
+</form>
+<ul>
+{% for r in resellers %}
+  <li>{{ r.username }}</li>
+{% endfor %}
+</ul>
