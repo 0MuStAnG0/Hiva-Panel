@@ -1,0 +1,10 @@
+<!-- support/templates/ticket_reply.html -->
+<html lang="fa"><head><meta charset="UTF-8"><title>پاسخ تیکت</title></head>
+<body style="direction: rtl; font-family: sans-serif;">
+<h2>🗨 پاسخ به تیکت: {{ ticket.subject }}</h2>
+<p>{{ ticket.message }}</p>
+<form method="post">{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">ثبت پاسخ</button>
+</form>
+</body></html>

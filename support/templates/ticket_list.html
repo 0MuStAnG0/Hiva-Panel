@@ -1,0 +1,13 @@
+<!-- support/templates/ticket_list.html -->
+<html lang="fa"><head><meta charset="UTF-8"><title>تیکت‌ها</title></head>
+<body style="font-family: sans-serif; direction: rtl;">
+<h2>📨 تیکت‌های من</h2>
+<a href="/support/new/">ارسال تیکت جدید</a>
+<ul>
+{% for t in tickets %}
+  <li>📝 {{ t.subject }} — وضعیت: {{ t.get_status_display }} — تاریخ: {{ t.created_at }}</li>
+{% empty %}
+  <li>هیچ تیکتی ثبت نشده.</li>
+{% endfor %}
+</ul>
+</body></html>

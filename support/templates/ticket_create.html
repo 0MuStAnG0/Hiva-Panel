@@ -1,0 +1,9 @@
+<!-- support/templates/ticket_create.html -->
+<html lang="fa"><head><meta charset="UTF-8"><title>تیکت جدید</title></head>
+<body style="direction: rtl; font-family: sans-serif;">
+<h2>🆕 ارسال تیکت جدید</h2>
+<form method="post">{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">ارسال</button>
+</form>
+</body></html>
