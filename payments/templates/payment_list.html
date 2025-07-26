@@ -1,0 +1,12 @@
+<!-- payments/templates/payment_list.html -->
+<html lang="fa"><head><meta charset="UTF-8"><title>لیست پرداخت‌ها</title></head>
+<body style="direction: rtl; font-family: sans-serif;">
+<h2>📜 لیست پرداخت‌های من</h2>
+<ul>
+{% for p in payments %}
+  <li>💰 مبلغ: {{ p.amount }} تومان — روش: {{ p.get_method_display }} — تایید: {{ p.is_verified }}</li>
+{% empty %}
+  <li>پرداختی ثبت نشده.</li>
+{% endfor %}
+</ul>
+</body></html>
