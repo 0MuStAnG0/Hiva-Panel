@@ -1,0 +1,12 @@
+<!-- hivapanel/templates/server_dashboard.html -->
+<h2>وضعیت سرورها</h2>
+<table border="1">
+    <tr><th>نام سرور</th><th>وضعیت</th><th>پینگ</th></tr>
+    {% for server in servers %}
+    <tr>
+        <td>{{ server.name }}</td>
+        <td>{{ server.status }}</td>
+        <td>{{ server.ping }} ms</td>
+    </tr>
+    {% endfor %}
+</table>
