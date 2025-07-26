@@ -8,17 +8,17 @@ def create_xui_account(server, username, traffic_gb, expire_days):
     payload = {
         "up": 0,
         "down": 0,
-        "total": int(traffic_gb * 1024 * 1024 * 1024),  # گیگ به بایت
+        "total": int(traffic_gb * 1024 * 1024 * 1024),
         "remark": f"{username}",
         "enable": True,
         "expiryTime": expire_days * 86400,
         "listen": "",
-        "port": 0,  # اگر پنل پورت اتومات بده
+        "port": 0,
         "protocol": "vless",
         "settings": {
             "clients": [
                 {
-                    "id": "auto",  # بگذار پنل UUID بسازه
+                    "id": "auto",
                     "flow": "",
                     "email": f"{username}@hiva"
                 }
