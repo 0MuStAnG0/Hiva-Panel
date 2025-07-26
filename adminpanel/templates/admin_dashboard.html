@@ -1,0 +1,26 @@
+<!-- adminpanel/templates/admin_dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>پنل مدیریت Hiva</title>
+</head>
+<body style="direction: rtl; font-family: sans-serif;">
+    <h2>📊 پنل مدیریت</h2>
+    <ul>
+        <li>👥 تعداد کاربران: {{ total_users }}</li>
+        <li>🔐 تعداد اکانت‌های VPN: {{ total_accounts }}</li>
+        <li>📶 ترافیک مصرف‌شده کل: {{ total_traffic }} گیگ</li>
+    </ul>
+
+    <h3>💳 پلن‌های فعال</h3>
+    <ul>
+    {% for plan in plans %}
+        <li>{{ plan.name }} - {{ plan.traffic_gb }} گیگ - {{ plan.duration_days }} روزه</li>
+    {% empty %}
+        <li>هیچ پلنی تعریف نشده.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
