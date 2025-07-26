@@ -1,0 +1,22 @@
+<!-- userpanel/templates/dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>داشبورد کاربر - Hiva VPN</title>
+</head>
+<body style="font-family: sans-serif; direction: rtl;">
+    <h2>💼 داشبورد کاربر</h2>
+    {% for acc in accounts %}
+        <hr>
+        <p>🌐 سرور: {{ acc.server }}</p>
+        <p>📅 انقضا: {{ acc.expire }}</p>
+        <p>📊 ترافیک: {{ acc.traffic }}</p>
+        <p>🔗 لینک اشتراک: <a href="{{ acc.link }}">{{ acc.link }}</a></p>
+        <img src="data:image/png;base64,{{ acc.qr|safe|slice:':80' }}... (QR too long)" alt="qr" width="200">
+    {% empty %}
+        <p>هیچ اکانتی یافت نشد.</p>
+    {% endfor %}
+</body>
+</html>
