@@ -1,0 +1,12 @@
+<h2>ارسال تیکت پشتیبانی</h2>
+<form method="post" action="/submit-ticket/">
+    <input name="subject" placeholder="موضوع"><br>
+    <textarea name="message" placeholder="متن پیام"></textarea><br>
+    <button type="submit">ارسال</button>
+</form>
+<h3>تاریخچه تیکت‌ها:</h3>
+<ul>
+{% for t in tickets %}
+    <li><strong>{{ t.subject }}</strong> - {{ t.date }}<br>{{ t.message }}</li>
+{% endfor %}
+</ul>
