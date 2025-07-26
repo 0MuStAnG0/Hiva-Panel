@@ -1,0 +1,13 @@
+<!-- reseller/templates/dashboard.html -->
+<html lang="fa"><head><meta charset="UTF-8"><title>پنل فروشنده</title></head>
+<body style="direction: rtl; font-family: sans-serif;">
+<h2>📊 پنل فروشنده: {{ reseller.user.username }}</h2>
+<p>کاربران: {{ users.count }} / {{ reseller.limit_users }} | ترافیک کل: {{ reseller.limit_traffic_gb }} GB</p>
+<a href="/reseller/create/">➕ ساخت کاربر جدید</a>
+<hr>
+<ul>
+{% for u in users %}
+  <li>👤 {{ u.username }} — ترافیک: {{ u.traffic_gb }} GB — تا: {{ u.expire_date }} — فعال: {{ u.is_active }}</li>
+{% endfor %}
+</ul>
+</body></html>

@@ -1,0 +1,9 @@
+<!-- reseller/templates/create_user.html -->
+<html lang="fa"><head><meta charset="UTF-8"><title>ساخت کاربر</title></head>
+<body style="direction: rtl; font-family: sans-serif;">
+<h2>➕ ساخت کاربر جدید</h2>
+<form method="post">{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">ثبت</button>
+</form>
+</body></html>
