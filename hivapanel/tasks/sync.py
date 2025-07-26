@@ -1,4 +1,3 @@
-# hivapanel/tasks/sync.py
 import subprocess
 from celery import shared_task
 from utils.sync_notifier import notify_sync
