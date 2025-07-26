@@ -1,2 +1,2 @@
-# Hiva-Panel
-پنل مدیریت پیشرفته فروش وی پی ان Hiva Panel
+# Hiva Panel
+پروژه مدیریت VPN با پشتیبانی از 3X-UI
