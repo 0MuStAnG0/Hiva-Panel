@@ -1,0 +1,16 @@
+<!-- adminpanel/templates/finance_dashboard.html -->
+
+<html lang="fa">
+<head><meta charset="UTF-8"><title>گزارش مالی</title></head>
+<body style="direction: rtl; font-family: sans-serif;">
+    <h2>📈 گزارش مالی ۳۰ روز گذشته</h2>
+    <ul>
+    {% for row in orders %}
+        <li>{{ row.day }} — 💰 درآمد: {{ row.revenue }} تومان — 📦 سفارشات: {{ row.count }}</li>
+    {% empty %}
+        <li>سفارشی در این بازه ثبت نشده.</li>
+    {% endfor %}
+    </ul>
+    <p>💰 مجموع کل درآمد: <strong>{{ total_revenue }} تومان</strong></p>
+</body>
+</html>

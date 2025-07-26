@@ -1,0 +1,21 @@
+<!-- adminpanel/templates/manage_plans.html -->
+
+<html lang="fa">
+<head><meta charset="UTF-8"><title>مدیریت پلن‌ها</title></head>
+<body style="direction: rtl; font-family: sans-serif;">
+    <h2>🎛 مدیریت پلن‌های VPN</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">ثبت پلن جدید</button>
+    </form>
+    <hr>
+    <ul>
+    {% for p in plans %}
+        <li>📦 {{ p.name }} — {{ p.traffic_gb }} GB — {{ p.duration_days }} روز</li>
+    {% empty %}
+        <li>هنوز پلنی ثبت نشده.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
